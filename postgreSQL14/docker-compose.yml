@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+        
+    pg:
+        container_name: votacao_pg14
+        image: postgres:14.2
+        restart: unless-stopped
+        ports:
+          - "5495:5432"
+        volumes:
+          - /opt/datafinder/files/db14/data:/var/lib/postgresql/data
+          - /opt/datafinder/files/db14/bkp:/opt/db-bkp
+        environment:
+          POSTGRES_USER: votacao
+          POSTGRES_PASSWORD: z896ipGG012567
+          PGDATA: /var/lib/postgresql/data
