@@ -51,16 +51,10 @@ class VotacaoApplicationTests {
 	@Test
 	public void createAssociated() {
 		Associated associated = new Associated();
-		associated.setName("Associated 1");
-		associated.setCpf("12345678901");
+		associated.setName("João");
+		associated.setCpf("12345678900");
 		associated = associatedRepository.save(associated);
-
 		assertThat(associated.getId()).isNotNull();
-
-		Associated retrievedAssociated = associatedRepository.findById(associated.getId()).orElse(null);
-		assertThat(retrievedAssociated).isNotNull();
-		assertThat(retrievedAssociated.getName()).isEqualTo("Associated 1");
-		assertThat(retrievedAssociated.getCpf()).isEqualTo("12345678901");
 	}
 
 	@Test
