@@ -13,34 +13,34 @@ public class Vote {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
 
     @Column
-    private Integer discussId;
+    private int discussId;
 
     @Column
-    private Integer associatedId;
+    private int associatedId;
 
     @Column
     private String vote;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public Integer getDiscussId() {
+    public int getDiscussId() {
         return discussId;
     }
 
-    public void setDiscussId(Integer discussId) {
+    public void setDiscussId(int discussId) {
         this.discussId = discussId;
     }
 
-    public Integer getAssociatedId() {
+    public int getAssociatedId() {
         return associatedId;
     }
 
-    public void setAssociatedId(Integer associatedId) {
+    public void setAssociatedId(int associatedId) {
         this.associatedId = associatedId;
     }
 

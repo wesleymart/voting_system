@@ -19,6 +19,9 @@ public class Session {
     @Column
     private Long duration;
 
+    @Column
+    private Long status;
+
     public Integer getId() {
         return id;
     }
@@ -29,5 +32,13 @@ public class Session {
 
     public Long getDuration() {
         return duration;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getStatus() {
+        return status;
     }
 }

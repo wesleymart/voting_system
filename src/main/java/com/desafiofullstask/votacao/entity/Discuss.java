@@ -25,6 +25,9 @@ public class Discuss {
     @Column
     private String description;
 
+    @Column
+    private Long allVotes;
+
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "session", nullable = true)
     private Session session;
@@ -57,4 +60,11 @@ public class Discuss {
         return session;
     }
 
+    public Long getAllVotes() {
+        return allVotes;
+    }
+
+    public void setAllVotes(Long allVotes) {
+        this.allVotes = allVotes;
+    }
 }

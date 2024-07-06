@@ -48,4 +48,9 @@ class VoteServiceTest {
         Vote retrievedVote = voteRepository.findById(vote.getId()).orElse(null);
         assertThat(retrievedVote).isNull();
     }
+
+    @Test
+    void sumAllVotes() {
+        voteService.getTheVotes(1);
+    }
 }

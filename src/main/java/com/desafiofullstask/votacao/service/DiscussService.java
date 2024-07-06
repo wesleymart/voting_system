@@ -22,4 +22,5 @@ public class DiscussService {
     public void delete(Integer id) {
         discussRepository.deleteById(id);
     }
+
 }
