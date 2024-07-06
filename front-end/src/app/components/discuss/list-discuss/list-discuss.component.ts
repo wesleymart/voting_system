@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalCreateDiscussComponent } from '../modal-create-discuss/modal-create-discuss.component';
 
 @Component({
   selector: 'app-list-discuss',
@@ -18,7 +20,18 @@ export class ListDiscussComponent implements OnInit {
       modelo: 'modelo2'
     },
   ];
-  constructor() { }
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalCreateDiscussComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('O diálogo foi fechado');
+    });
+}
 
   ngOnInit(): void {
   }

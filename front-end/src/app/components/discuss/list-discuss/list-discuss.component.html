@@ -4,7 +4,7 @@
     <button routerLink="/newDiscuss" class="button">Pautas em votação</button>
     <button routerLink="/newDiscuss" class="button">Pautas aprovadas</button>
     <button routerLink="/newDiscuss" class="button">Pautas reprovadas</button>
-    <button routerLink="/newDiscuss" class="button-plus"> + Pauta</button>
+    <button routerLink="/newDiscuss" class="button-plus"  (click)="openDialog()"> + Pauta</button>
   </header>
   <div class="mural" *ngIf="listDiscuss.length > 0, else withoutDiscuss">
     <div *ngFor="let discuss of listDiscuss">
