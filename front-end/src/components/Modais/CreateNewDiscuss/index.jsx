@@ -41,8 +41,9 @@ const DiscussModal = ({ visible, onCreate, onCancel }) => {
         </Form.Item>
         <Form.Item
           name="duration"
-          label="Duração da cessão da pauta em minutos"
-          rules={[{ required: true, message: 'Por favor insira a duração da cessão!' }]}
+          label="Duração da sessão da pauta em minutos"
+          initialValue={1}
+          rules={[{ required: true, message: 'Por favor insira a duração da sessão!' }]}
         >
           <InputNumber min={1} defaultValue={1}/>
         </Form.Item>

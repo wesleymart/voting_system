@@ -4,13 +4,15 @@ import com.desafiofullstask.votacao.entity.Discuss;
 import com.desafiofullstask.votacao.enums.SessionStatusEmum;
 import com.desafiofullstask.votacao.repository.DiscussRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.List;
 
 @Service
 public class DiscussService {
@@ -27,8 +29,18 @@ public class DiscussService {
         return discussRepository.findById(id).orElse(null);
     }
 
-    public List<Discuss> findAllDiscuss() {
-        return discussRepository.findAll();
+    public Page<Discuss> findAllDiscuss(int page, int searchStatus) {
+
+        int pageLimit = 10;
+        int pageOffset = page;
+        Sort sort = Sort.by(Sort.Direction.DESC, "id");
+        PageRequest pageRequest = PageRequest.of(pageOffset, pageLimit, sort);
+        if(searchStatus != 0){
+            return discussRepository.findBySessionStatus(searchStatus, pageRequest);
+        }else{
+            return discussRepository.findAll(pageRequest);
+        }
+
     }
 
     public Discuss save(Discuss discuss) {

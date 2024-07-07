@@ -8,8 +8,8 @@ class ApiService {
   }
 
   // Método para obter todas as pautas
-  getAllDiscusses() {
-    return this.api.get("/api/discuss");
+  getAllDiscusses(page,searchStatus) {
+    return this.api.get(`/api/discuss?page=${page}&searchStatus=${searchStatus}`);
   }
 
   // Método para adicionar uma nova pauta

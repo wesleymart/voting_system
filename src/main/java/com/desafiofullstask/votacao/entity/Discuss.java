@@ -26,7 +26,11 @@ public class Discuss {
     private String description;
 
     @Column
-    private Long allVotes;
+    private int totalVotesYes;
+
+    @Column
+    private int totalVotesNo;
+
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "session", nullable = true)
@@ -60,11 +64,20 @@ public class Discuss {
         return session;
     }
 
-    public Long getAllVotes() {
-        return allVotes;
+    public int getTotalVotesYes() {
+        return totalVotesYes;
     }
 
-    public void setAllVotes(Long allVotes) {
-        this.allVotes = allVotes;
+    public void setTotalVotesYes(int totalVotesYes) {
+        this.totalVotesYes = totalVotesYes;
     }
+
+    public int getTotalVotesNo() {
+        return totalVotesNo;
+    }
+
+    public void setTotalVotesNo(int totalVotesNo) {
+        this.totalVotesNo = totalVotesNo;
+    }
+
 }

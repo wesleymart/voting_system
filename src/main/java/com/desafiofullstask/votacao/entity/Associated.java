@@ -15,8 +15,6 @@ public class Associated {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
-    private String name;
 
     @Column
     private String cpf;
@@ -25,13 +23,6 @@ public class Associated {
         return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;

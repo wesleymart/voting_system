@@ -24,6 +24,7 @@ public class Vote {
     @Column
     private String vote;
 
+
     public int getId() {
         return id;
     }
