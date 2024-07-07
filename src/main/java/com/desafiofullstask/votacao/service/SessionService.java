@@ -24,7 +24,7 @@ public class SessionService {
         sessionRepository.deleteById(id);
     }
 
-    public void changeStatus(Integer id, Long status) {
+    public void changeStatus(Integer id, int status) {
         Session session = sessionRepository.findById(id).orElse(null);
         if (session != null) {
             session.setStatus(status);

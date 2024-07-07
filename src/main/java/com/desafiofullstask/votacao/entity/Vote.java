@@ -19,7 +19,7 @@ public class Vote {
     private int discussId;
 
     @Column
-    private int associatedId;
+    private String associatedCpf;
 
     @Column
     private String vote;
@@ -36,12 +36,12 @@ public class Vote {
         this.discussId = discussId;
     }
 
-    public int getAssociatedId() {
-        return associatedId;
+    public String getAssociatedCpf() {
+        return associatedCpf;
     }
 
-    public void setAssociatedId(int associatedId) {
-        this.associatedId = associatedId;
+    public void setAssociatedCpf(String associatedCpf) {
+        this.associatedCpf = associatedCpf;
     }
 
     public String getVote() {

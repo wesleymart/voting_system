@@ -65,7 +65,7 @@ class VotacaoApplicationTests {
 
 		Vote vote = new Vote();
         assert associated != null;
-        vote.setAssociatedId(associated.getId());
+        vote.setAssociatedCpf(associated.getId());
 		assert discuss != null;
 		vote.setDiscussId(discuss.getId());
 		vote.setVote("Sim");
@@ -86,10 +86,10 @@ class VotacaoApplicationTests {
 		assert associated != null;
 		assert discuss != null;
 
-		if(vote.getAssociatedId() == associated.getId()) {
+		if(vote.getAssociatedCpf() == associated.getId()) {
 			System.out.println("Associado já votou");
 		} else {
-			vote.setAssociatedId(associated.getId());
+			vote.setAssociatedCpf(associated.getId());
 			vote.setDiscussId(discuss.getId());
 			vote.setVote("Sim");
 			vote = voteRepository.save(vote);

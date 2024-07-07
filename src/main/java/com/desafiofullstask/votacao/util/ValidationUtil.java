@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ValidationUtil {
 
-    public boolean validateCPF(String cpf) {
+    public static boolean validateCPF(String cpf) {
 
             if (cpf.isEmpty()) return false;
             String number = cpf;

@@ -1,0 +1,87 @@
+.container {
+    padding: 20px;
+    background: #f0f8ff; /* Alice Blue, um tom pastel suave */
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-table .ant-table {
+    background: #e6f7ff; /* Light blue background */
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .custom-table .ant-table-thead > tr > th {
+    background: #bae7ff; /* Slightly darker blue for header */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .custom-table .ant-table-tbody > tr > td {
+    text-align: center;
+  }
+  
+  .ant-btn {
+    transition: background-color 0.3s ease;
+  }
+  
+  .ant-btn:hover {
+    background-color: #1890ff;
+    border-color: #1890ff;
+  }
+  
+  .ant-tooltip-inner {
+    background-color: #1890ff;
+  }
+  
+  .ant-tooltip-arrow-content {
+    background-color: #1890ff;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .card {
+      padding: 10px;
+    }
+  
+    .custom-table .ant-table-thead > tr > th, 
+    .custom-table .ant-table-tbody > tr > td {
+      font-size: 12px;
+    }
+  
+    .ant-btn {
+      padding: 0 8px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .card {
+      padding: 10px;
+    }
+  
+    .custom-table .ant-table-thead > tr > th, 
+    .custom-table .ant-table-tbody > tr > td {
+      font-size: 12px;
+    }
+  
+    .ant-btn {
+      padding: 0 8px;
+    }
+  }
+  

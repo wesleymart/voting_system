@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -29,18 +30,23 @@ public class DiscussController {
         return ResponseEntity.ok().body(discussService.findDiscussById(id));
     }
 
+    @GetMapping()
+    public ResponseEntity<List<Discuss>> getAllDiscusses() {
+        return ResponseEntity.ok().body(discussService.findAllDiscuss());
+    }
+
     @PostMapping
     public ResponseEntity<Discuss> save(
-            @RequestBody Discuss associated
+            @RequestBody Discuss newDiscuss
     ) {
-        return ResponseEntity.ok().body(discussService.save(associated));
+        return ResponseEntity.ok().body(discussService.save(newDiscuss));
     }
 
     @PutMapping
     public ResponseEntity<Discuss> update(
-            @RequestBody Discuss associated
+            @RequestBody Discuss discuss
     ) {
-        return ResponseEntity.ok().body(discussService.save(associated));
+        return ResponseEntity.ok().body(discussService.save(discuss));
     }
 
     @DeleteMapping("/{id}")

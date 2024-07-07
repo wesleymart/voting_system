@@ -21,7 +21,7 @@ class VoteServiceTest {
     void save() {
         Vote vote = new Vote();
         vote.setVote("Sim");
-        vote.setAssociatedId(1);
+        vote.setAssociatedCpf(1);
         vote.setDiscussId(1);
         vote = voteService.save(vote);
 
@@ -39,7 +39,7 @@ class VoteServiceTest {
     void delete() {
         Vote vote = new Vote();
         vote.setVote("Sim");
-        vote.setAssociatedId(1);
+        vote.setAssociatedCpf(1);
         vote.setDiscussId(1);
         vote = voteService.save(vote);
 
